@@ -11,29 +11,32 @@ def get_dict(file):
             album = row['Album']
             artist = row['Band Name']
             genre = row['Genre']
-            csv_list.append(list((genre, artist, album, name)))
+            csv_list.append(list((name, album, artist, genre)))
     return csv_list
 
 def generate_tree(data_list, tree):
     # Collection of data!
+    names = []
+    albums = []
+    artists = []
     genres = []
 
     # Gathering genres.
     for song in data_list:
-        # genre = song[3]
-        # artist = song[2]
-        # album = song[1]
-        # name = song[0]
-        # tree_genre = TreeNode(genre)
-        # if genre not in genres:
-        #     genres.append(genre)
-        #     tree.add_child(tree_genre)
-        for item in song:
-            if item not in genres:
-                genres.append(item)
-                tree.add_child(TreeNode(item))
-        
-
+        genre = song[3]
+        artist = song[2]
+        album = song[1]
+        name = song[0]
+        tree_genre = TreeNode(genre)
+        tree_artist = TreeNode(artist)
+        tree_album = TreeNode(album)
+        tree_name = TreeNode(name)
+        if genre not in genres:
+            genres.append(genre)
+            tree.add_child(tree_genre)
+        tree_genre.add_child(tree_artist)
+        tree_artist.add_child(tree_album)
+        tree_album.add_child(tree_name)
 
         
 

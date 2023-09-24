@@ -15,7 +15,7 @@ def get_dict(file):
     return csv_list
 
 def generate_tree(data_list, tree):
-    # Collection of data! I use this lists to track which names, albuns, artists, and genres have already been added to the tree.
+    # Collection of data! I use this lists to track which names, albums, artists, and genres have already been added to the tree.
     # This way there are no repetitions.
     names = []
     albums = []
@@ -26,7 +26,6 @@ def generate_tree(data_list, tree):
     # As we keep each song in a list with their 'Name', 'Album', 'Artist', and 'Genre', we can easily organize and add children to one another.
     # In case we don't have the current tree in the previous parent tree, we add them as a child. Otherwise, we set the current tree to be the one which
     # already exists in the parent tree.
-
     # Kinda confusing, but it works!!! (btw I couldn't implement a helper method to do this 'if and else' blocks. Gotta try more)
     for song in data_list:
         genre = song[3]
@@ -70,8 +69,5 @@ def generate_tree(data_list, tree):
                 if child.value == name:
                     tree_name = child
 
-my_tree = TreeNode('Library')
-tree_genre = TreeNode('Genres')
-my_tree.add_child(tree_genre)
-generate_tree(get_dict('songs_database.csv'), tree_genre)
-print(my_tree)
+def find_value():
+    pass

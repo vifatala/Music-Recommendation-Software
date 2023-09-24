@@ -4,6 +4,7 @@ class TreeNode:
   def __init__(self, value):
     self.value = value # data
     self.children = [] # references to other nodes
+    self.parent = None
 
   def __str__(self):
     stack = deque()
@@ -24,12 +25,13 @@ class TreeNode:
 
   def add_child(self, child_node):
     # creates parent-child relationship
-    print(f"Adding {child_node.value}")
-    self.children.append(child_node) 
+    # print(f"Adding {child_node.value}")
+    self.children.append(child_node)
+    child_node.parent = self
     
   def remove_child(self, child_node):
     # removes parent-child relationship
-    print(f"Removing {child_node.value} from {self.value}")
+    # print(f"Removing {child_node.value} from {self.value}")
     self.children = [child for child in self.children 
                      if child is not child_node]
 

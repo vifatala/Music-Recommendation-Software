@@ -1,6 +1,6 @@
 from gathering_data import *
 from tree import TreeNode
-from bfs import bfs
+from tree_search import bfs
 
 
 def search_area():
@@ -16,8 +16,10 @@ def search_area():
         try_again()
     else:
         goal_path, goal_node, possible = bfs(my_tree, user_search_lower)
-        if possible is not None:
+        if (len(possible) != 0) and (goal_path is None):
             print(f"Starting with \'{user_search}\' in our catalog we have:")
+            for value in possible:
+                print("-"+value)
         elif goal_path is not None:
             print("Path found")
             for node in goal_path:

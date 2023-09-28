@@ -1,5 +1,8 @@
 from collections import deque
 
+# This function is a naive pattern search algorithm used to check if the first letters of the current value being checked on the
+# database is equal to the goal value (the pattern). If they are the same, the function return True, which makes the current node be 
+# appended to a list of 'possible values' on the BFS function.
 def pattern_search(sentence, pattern):
   for index in range(len(sentence)):
     match_count = 0

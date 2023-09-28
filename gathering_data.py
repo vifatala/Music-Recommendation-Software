@@ -68,6 +68,3 @@ def generate_tree(data_list, tree):
             for child in tree_album.children:
                 if child.value == name:
                     tree_name = child
-
-def find_value():
-    pass

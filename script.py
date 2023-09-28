@@ -2,15 +2,20 @@ from gathering_data import *
 from tree import TreeNode
 from tree_search import bfs
 
-
+# This function is used to interact with the user everytime they can make a search, call the bfs,
+# and decide in which category (song, album, artist, genre) the value found should be. This is done by
+# seeing how far the node found parent is from the 'Genres' node.
+# 
 def search_area():
+    # Interaction
     print('')
     print(f"{name}, search for anything in the world of Rock music!")
     print("You can either type the name of a song, album, artist, or genre")
     print("Or type \'Library\' to see all of our catalog.")
     user_search = input("> ")
     print('')
-    user_search_lower = user_search.lower()
+    
+    user_search_lower = user_search.lower()     # make the user input lower, so we don't need to worry about captalization.
     if user_search_lower == 'library':
         print(my_tree)
         try_again()

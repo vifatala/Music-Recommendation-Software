@@ -69,8 +69,25 @@ tree_genre = TreeNode('Genres')
 my_tree.add_child(tree_genre)
 generate_tree(get_dict('songs_database.csv'), tree_genre)
 
+print("""
+      WELCOME TO THE
 
-print("Welcome to the Rock Music Recommendation Software!")
+$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$$$
+$$$$$'`$$$$$$$$$$$$$'`$$$
+$$$$$$  $$$$$$$$$$$  $$$$
+$$$$$$$  '$/ `/ `$' .$$$$
+$$$$$$$$. i  i  /! .$$$$$
+$$$$$$$$$.--'--'   $$$$$$
+$$^^$$$$$'        J$$$$$$
+$$$   ~""   `.   .$$$$$$$
+$$$$$e,      ;  .$$$$$$$$
+$$$$$$$$$$$.'   $$$$$$$$$
+$$$$$$$$$$$$.    $$$$$$$$
+$$$$$$$$$$$$$     $by&TL$
+      
+Rock Music Recommendation Software!
+      """)
 name = input("What is your name? ")
 search_area()
 print('')
